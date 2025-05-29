@@ -26,9 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   nextBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (currentPage === 1) return; // evitar next en pagina 2 quiz hasta validar
-
-      if (currentPage < pages.length -1) {
+      // Se elimina la línea que bloqueaba avanzar en la página 2
+      if (currentPage < pages.length - 1) {
         showPage(currentPage + 1);
       }
     });
@@ -73,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   submitGuess.addEventListener('click', () => {
     const guess = guessInput.value.trim().toLowerCase();
-    const correctAnswer = "zinedine zidane";
 
     if (guess.includes("zidane")) {
       guessResult.textContent = "Exact ! C'est bien Zinedine Zidane en maillot de France.";
