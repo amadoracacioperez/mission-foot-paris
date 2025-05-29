@@ -120,3 +120,19 @@ button:hover, .next-btn:hover {
 #guess-input::placeholder {
   color: #ffd966aa;
 }
+
+/* Para la página 3, scroll interno y tamaño controlado */
+#page3 {
+  max-height: 80vh;       /* altura máxima visible, el resto scroll */
+  overflow-y: auto;
+  padding-right: 10px;    /* para que no tape la barra de scroll */
+}
+
+/* Imagen más pequeña y con blur */
+#page3 .blurred-image {
+  max-width: 300px;
+  height: auto;
+  filter: blur(6px);
+  display: block;
+  margin-bottom: 15px;
+}
