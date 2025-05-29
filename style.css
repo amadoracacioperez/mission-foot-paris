@@ -122,7 +122,7 @@ button:hover, .next-btn:hover {
 }
 
 #page3 {
-  max-height: 75vh;
+  max-height: 50vh;
   overflow-y: auto;
   padding-right: 10px;
   -webkit-overflow-scrolling: touch; /* para scroll suave en iOS */
@@ -135,4 +135,12 @@ button:hover, .next-btn:hover {
   filter: blur(6px);
   display: block;
   margin: 0 auto 15px auto;
+}
+
+/* Página 4 con scroll interno */
+#page4 {
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  -webkit-overflow-scrolling: touch; /* scroll suave iOS */
 }
