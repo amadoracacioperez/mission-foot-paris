@@ -2,70 +2,82 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mission Foot Paris – Agent Gabin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Foot Paris – Opération Parc des Princes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <audio id="bgMusic" src="sounds/mission_theme.mp3" autoplay loop></audio>
+  <div class="container">
 
-  <div id="app">
-    <section id="accueil" class="section active">
-      <img src="images/parc_mystere.jpg" alt="Parc des Princes mystérieux" class="background" />
-      <div class="overlay">
-        <h1>Mission secrète pour Agent Gabin</h1>
-        <p>Ta mission, si tu l’acceptes : infiltrer le cœur du football parisien.<br>Prépare-toi à découvrir ce que même un fan du Barça ne peut refuser…</p>
-        <button onclick="nextSection()" class="btn">Accepter la mission</button>
-      </div>
+    <!-- Página 1 - Inicio -->
+    <section id="page1" class="page active">
+      <img src="images/parc_mystere.jpg" alt="Parc des Princes" class="mysterious-image" />
+      <h1>Agent Gabin, ta mission, si tu l’acceptes :</h1>
+      <p>Infiltrer le cœur du football parisien. Prépare-toi à découvrir ce que même un fan du Barça ne peut refuser…</p>
+      <button id="play-audio" style="margin-top:20px; padding:10px 20px; font-size:1rem; cursor:pointer; display:none;">▶️ Reproducir música</button>
+      <button class="next-btn">Commencer la mission</button>
     </section>
 
-    <section id="quiz" class="section">
-      <h2>Défi 1 : Quiz – "Connais-tu ton ennemi ?"</h2>
-      <div class="quiz">
-        <div class="question" data-correct="C">
-          <p>1. Quel joueur a porté les maillots du Barça et du PSG ?</p>
-          <button>A. Ronaldinho</button>
-          <button>B. Zlatan Ibrahimović</button>
-          <button>C. Neymar</button>
-          <button>D. Ludovic Giuly</button>
+    <!-- Página 2 - Défi 1 -->
+    <section id="page2" class="page">
+      <h2>Défi 1 – Quiz “Connais-tu ton ennemi ?”</h2>
+
+      <form id="quiz-form">
+        <div class="question">
+          <p>Quel joueur a porté les maillots du Barça et du PSG, marquant l’histoire des deux clubs ?</p>
+          <label><input type="radio" name="q1" value="A" /> A. Ronaldinho</label><br />
+          <label><input type="radio" name="q1" value="B" /> B. Zlatan Ibrahimović</label><br />
+          <label><input type="radio" name="q1" value="C" /> C. Neymar</label><br />
+          <label><input type="radio" name="q1" value="D" /> D. Ludovic Giuly</label>
         </div>
-        <div class="question" data-correct="B">
-          <p>2. En quelle année le PSG a-t-il été fondé ?</p>
-          <button>A. 1900</button>
-          <button>B. 1970</button>
-          <button>C. 1899</button>
-          <button>D. 2000</button>
+
+        <div class="question">
+          <p>En quelle année le PSG a-t-il été fondé ?</p>
+          <label><input type="radio" name="q2" value="A" /> A. 1900</label><br />
+          <label><input type="radio" name="q2" value="B" /> B. 1970</label><br />
+          <label><input type="radio" name="q2" value="C" /> C. 1899</label><br />
+          <label><input type="radio" name="q2" value="D" /> D. 2000</label>
         </div>
-        <div class="question" data-correct="D">
-          <p>3. Quel est le surnom du Parc des Princes ?</p>
-          <button>A. Le Colisée</button>
-          <button>B. La Forteresse</button>
-          <button>C. Le Temple</button>
-          <button>D. Le Parc</button>
+
+        <div class="question">
+          <p>Quel est le surnom du Parc des Princes ?</p>
+          <label><input type="radio" name="q3" value="A" /> A. Le Colisée</label><br />
+          <label><input type="radio" name="q3" value="B" /> B. La Forteresse</label><br />
+          <label><input type="radio" name="q3" value="C" /> C. Le Temple</label><br />
+          <label><input type="radio" name="q3" value="D" /> D. Le Parc</label>
         </div>
-      </div>
+
+        <button type="button" id="submit-quiz">Valider</button>
+      </form>
+
+      <div id="quiz-result" class="result"></div>
+      <button class="next-btn" style="display:none;">Continuer</button>
     </section>
 
-    <section id="guess" class="section">
-        <h2>Défi 2 : Devine le joueur</h2>
-        <p>Quel joueur se cache derrière cette image floutée ?</p>
-        <img src="images/zidane_floute.jpg" alt="Image floutée" class="blurred" />
-        <input type="text" placeholder="Ta réponse ici..." id="guessInput" />
-        <button onclick="checkGuess()">Valider</button>
-        <p id="guessResult"></p>
-      </section>
-
-    <section id="reveal" class="section">
-      <img src="images/parc_net.jpg" alt="Parc des Princes" class="background" />
-      <div class="overlay">
-        <h2>Félicitations, Agent Gabin !</h2>
-        <p>Tu as brillamment accompli ta mission.</p>
-        <p>🎁 En récompense, tu es invité à une <strong>visite exclusive du Parc des Princes</strong> lors de ton prochain passage à Paris.</p>
-        <p>Prépare-toi à fouler la pelouse, découvrir les coulisses, et peut-être même croiser une star du PSG… même si ton cœur reste en Catalogne 💙❤️</p>
-        <p class="sign">– Ta marraine parisienne</p>
-      </div>
+    <!-- Página 3 - Défi 2 -->
+    <section id="page3" class="page">
+      <h2>Défi 2 – Devine l’image</h2>
+      <img src="images/zidane-blur.jpg" alt="Image floutée" class="blurred-image" />
+      <p>Quel joueur est sur cette image ?</p>
+      <input type="text" id="guess-input" placeholder="Ton réponse ici..." />
+      <button id="submit-guess">Valider</button>
+      <div id="guess-result" class="result"></div>
+      <button class="next-btn" style="display:none;">Révélation</button>
     </section>
+
+    <!-- Página 4 - Révélation du cadeau -->
+    <section id="page4" class="page">
+      <h2>Révélation du cadeau</h2>
+      <img src="images/parc_mystere.jpg" alt="Parc des Princes" class="clear-image" />
+      <p>
+        Félicitations, Agent Gabin ! Tu as brillamment accompli ta mission. En récompense, tu es invité à une visite exclusive du Parc des Princes lors de ton prochain passage à Paris. Prépare-toi à fouler la pelouse, découvrir les coulisses et peut-être même croiser une star du PSG… même si ton cœur reste en Catalogne.<br />
+        Signé : Ta marraine parisienne
+      </p>
+    </section>
+
   </div>
+
+  <audio id="background-music" src="sounds/mission_theme.mp3" loop></audio>
 
   <script src="script.js"></script>
 </body>

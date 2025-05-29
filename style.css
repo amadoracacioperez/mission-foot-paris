@@ -1,98 +1,122 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #000;
-    color: white;
-    overflow: hidden;
-  }
-  
-  .section {
-    display: none;
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-    padding: 2rem;
-    box-sizing: border-box;
-  }
-  
-  .section.active {
-    display: block;
-  }
-  
-  .background {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    filter: brightness(0.4);
-  }
-  
-  .overlay {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: auto;
-    top: 15%;
-    background: rgba(0,0,0,0.6);
-    padding: 2rem;
-    border-radius: 20px;
-  }
-  
-  h1, h2 {
-    color: #FFCB05;
-  }
-  
-  button, .btn {
-    background: #A50044;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .quiz .question {
-    margin-bottom: 2rem;
-  }
-  
-  .quiz button {
-    display: block;
-    margin: 0.5rem auto;
-  }
-  
-  .quiz button.correct {
-    background-color: green;
-  }
-  
-  .quiz button.wrong {
-    background-color: red;
-  }
-  
-  input[type="text"] {
-    padding: 0.7rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: none;
-    margin-top: 1rem;
-  }
-  
-  .blurred {
-    width: 80%;
-    max-width: 500px;
-    filter: blur(8px);
-    margin-top: 1rem;
-  }
-  
-  .sign {
-    margin-top: 2rem;
-    font-style: italic;
-    color: #ccc;
-  }
-  
+/* Reset básico y estilo general */
+body, html {
+  margin: 0; padding: 0; height: 100%; overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #A50044; /* Granate Barça */
+  color: #FFC400; /* Amarillo Barça para texto */
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Páginas ocultas excepto la activa */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Imagen misteriosa con filtro */
+.mysterious-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 20px;
+  filter: brightness(0.5) contrast(1.2);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #004D98aa; /* Luz azul */
+}
+
+/* Imagen clara para la revelación */
+.clear-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #004D98cc;
+}
+
+/* Imagen borrosa */
+.blurred-image {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 20px;
+  filter: blur(8px);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #A50044cc;
+}
+
+/* Botones */
+button, .next-btn {
+  background-color: #004D98; /* Azul Barça */
+  color: #FFC400; /* Amarillo Barça */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 5px #A50044cc;
+}
+
+button:hover, .next-btn:hover {
+  background-color: #002f5d; /* Azul más oscuro */
+  color: #fff;
+}
+
+/* Estilo de preguntas y formulario */
+.question {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #FFC400;
+}
+
+/* Scroll solo en el desafio 1 */
+#page2 {
+  overflow-y: auto;
+  max-height: 80vh;
+  padding-right: 10px;
+  background: #004D98;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #FFC400cc;
+  color: #FFC400;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Resultados */
+.result {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FFC400;
+}
+
+/* Input texto para guessing */
+#guess-input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 10px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #FFC400;
+  width: 80%;
+  max-width: 400px;
+  box-sizing: border-box;
+  background: #002f5d;
+  color: #FFC400;
+}
+
+#guess-input::placeholder {
+  color: #ffd966aa;
+}
