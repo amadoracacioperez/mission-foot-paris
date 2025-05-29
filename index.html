@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission Foot Paris – Agent Gabin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" src="sounds/mission_theme.mp3" autoplay loop></audio>
+
+  <div id="app">
+    <section id="accueil" class="section active">
+      <img src="images/parc_mystere.jpg" alt="Parc des Princes mystérieux" class="background" />
+      <div class="overlay">
+        <h1>Mission secrète pour Agent Gabin</h1>
+        <p>Ta mission, si tu l’acceptes : infiltrer le cœur du football parisien.<br>Prépare-toi à découvrir ce que même un fan du Barça ne peut refuser…</p>
+        <button onclick="nextSection()" class="btn">Accepter la mission</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="section">
+      <h2>Défi 1 : Quiz – "Connais-tu ton ennemi ?"</h2>
+      <div class="quiz">
+        <div class="question" data-correct="C">
+          <p>1. Quel joueur a porté les maillots du Barça et du PSG ?</p>
+          <button>A. Ronaldinho</button>
+          <button>B. Zlatan Ibrahimović</button>
+          <button>C. Neymar</button>
+          <button>D. Ludovic Giuly</button>
+        </div>
+        <div class="question" data-correct="B">
+          <p>2. En quelle année le PSG a-t-il été fondé ?</p>
+          <button>A. 1900</button>
+          <button>B. 1970</button>
+          <button>C. 1899</button>
+          <button>D. 2000</button>
+        </div>
+        <div class="question" data-correct="D">
+          <p>3. Quel est le surnom du Parc des Princes ?</p>
+          <button>A. Le Colisée</button>
+          <button>B. La Forteresse</button>
+          <button>C. Le Temple</button>
+          <button>D. Le Parc</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="guess" class="section">
+        <h2>Défi 2 : Devine le joueur</h2>
+        <p>Quel joueur se cache derrière cette image floutée ?</p>
+        <img src="images/zidane_floute.jpg" alt="Image floutée" class="blurred" />
+        <input type="text" placeholder="Ta réponse ici..." id="guessInput" />
+        <button onclick="checkGuess()">Valider</button>
+        <p id="guessResult"></p>
+      </section>
+
+    <section id="reveal" class="section">
+      <img src="images/parc_net.jpg" alt="Parc des Princes" class="background" />
+      <div class="overlay">
+        <h2>Félicitations, Agent Gabin !</h2>
+        <p>Tu as brillamment accompli ta mission.</p>
+        <p>🎁 En récompense, tu es invité à une <strong>visite exclusive du Parc des Princes</strong> lors de ton prochain passage à Paris.</p>
+        <p>Prépare-toi à fouler la pelouse, découvrir les coulisses, et peut-être même croiser une star du PSG… même si ton cœur reste en Catalogne 💙❤️</p>
+        <p class="sign">– Ta marraine parisienne</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
