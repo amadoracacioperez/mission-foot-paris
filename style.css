@@ -121,18 +121,18 @@ button:hover, .next-btn:hover {
   color: #ffd966aa;
 }
 
-/* Para la página 3, scroll interno y tamaño controlado */
 #page3 {
-  max-height: 80vh;       /* altura máxima visible, el resto scroll */
+  max-height: 75vh;
   overflow-y: auto;
-  padding-right: 10px;    /* para que no tape la barra de scroll */
+  padding-right: 10px;
+  -webkit-overflow-scrolling: touch; /* para scroll suave en iOS */
 }
 
-/* Imagen más pequeña y con blur */
+/* Imagen Zidane más pequeña y centrada */
 #page3 .blurred-image {
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
   filter: blur(6px);
   display: block;
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
 }
